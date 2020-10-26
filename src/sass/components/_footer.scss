@@ -1,0 +1,103 @@
+
+    .site-footer {
+       
+        padding: 0 !important;
+    }
+    .footer-top {
+        padding: 30px 50px;
+        background-color: var(--base-gray-Light);
+        color:var(--base-charcoal);
+       
+    }
+    .post, .page {
+        margin: 0 !important;
+    }
+    footer ul.menu {
+        display: block;
+        background: transparent;
+        text-align: left;
+        padding: 0;
+    }
+    footer ul.menu a{
+        display: block;
+        background: transparent;
+        text-align: left;
+        color:var(--base-white);
+        transition: 0.3s;
+        padding: 0;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    .footer-center {
+        padding: 40px 50px;
+        background-color: var(--base-blue-1);
+        color: white;
+    }
+    .footer-bottom {
+        padding: 20px 50px;
+        background-color: var(--base-blue-3);
+        color:var(--base-charcoal);
+        color:var(--base-white);
+    }
+    footer ul.sub-menu {
+        position: relative !important;
+        height: auto !important;
+    }
+    footer a#btn-top {
+        position: fixed;
+        bottom: 0px;
+        right: 30px;
+        padding: 12px;
+        background: var(--base-blue-1);
+        color: var(--base-white);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        display: none;
+    }
+    .footer-bottom {
+        text-align: center;
+    }.footer-bottom {
+        text-align: center;
+    }
+    @media (max-width:767px){
+        .open-footer{
+            display: block !important;
+        }
+        .collapse-trigger:after {
+            content: "\f078";
+            font-family: 'Font Awesome 5 Free';
+            float: right;
+            font-size: 14px;
+        }
+        .active:after{
+            content: "\f077" !important;
+        }
+        .collapse{
+            display: none;
+        }
+        .widget-footer {
+            border-bottom: 1px solid;
+            border-top: 1px solid;
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+        .widget-footer-top{
+            border-color:var(--base-charcoal) ;
+        }
+        .widget-footer-center{
+            border-color: var(--base-white);
+        }
+
+    }
+    @media (max-width:1023px) {
+        .footer-top{
+            padding: 40px 0px;
+        }
+        .footer-center{
+            padding: 40px 0px;
+        }
+        
+    }
+
