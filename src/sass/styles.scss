@@ -1,6 +1,8 @@
 //base
 @import "~bootstrap/scss/bootstrap-reboot.scss";
 @import "~bootstrap/scss/bootstrap-grid.scss";
+@import './components/splide/sass/core/splide-core.scss';
+@import './components/splide/sass/themes/sky-blue/splide-sky-blue.scss';
 //variables
 @import "./global/variables";
 //fonts

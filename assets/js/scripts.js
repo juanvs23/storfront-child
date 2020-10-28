@@ -6090,7 +6090,11 @@ var collapseAll = function collapseAll(triggers) {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  //top to up btn
+  new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default.a('.splide', {
+    type: 'loop',
+    autoplay: true
+  }).mount(); //top to up btn
+
   footer.appendChild(scrollBtn); //collpase
 
   if (window.innerWidth < 768) {
@@ -6116,11 +6120,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   hasChildrenMenus.forEach(function (hasChildrenMenu, i) {
     hasChildrenMenu.addEventListener('mouseleave', function () {
-      hasChildrenUl[i].style.height = "0";
-      hasChildrenUl[i].style.overflowY = "hidden";
+      setTimeout(function () {
+        hasChildrenUl[i].classList.remove('actived_menu');
+      }, 300);
     });
     hasChildrenMenu.addEventListener('mouseenter', function () {
-      hasChildrenUl[i].style.height = "250px";
+      setTimeout(function () {
+        hasChildrenUl[i].classList.add('actived_menu');
+      }, 300);
     });
   });
   openMenu.addEventListener('click', function () {

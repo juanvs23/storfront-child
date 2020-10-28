@@ -71,7 +71,11 @@ const   collapseAll=(triggers)=>{
 
 
 document.addEventListener('DOMContentLoaded',()=>{
-    
+    new splide( '.splide',{
+        type   : 'loop',
+        autoplay:true,
+        
+    } ).mount();
 //top to up btn
 footer.appendChild(scrollBtn)    
 //collpase
@@ -101,11 +105,14 @@ closeSearch.addEventListener('click',()=>{
     })
     hasChildrenMenus.forEach((hasChildrenMenu,i)=>{
         hasChildrenMenu.addEventListener('mouseleave',()=>{
-            hasChildrenUl[i].style.height="0"
-            hasChildrenUl[i].style.overflowY="hidden"
+           setTimeout(()=>{
+            hasChildrenUl[i].classList.remove('actived_menu')
+           },300)
         })
         hasChildrenMenu.addEventListener('mouseenter',()=>{
-            hasChildrenUl[i].style.height="250px"
+            setTimeout(()=>{
+                hasChildrenUl[i].classList.add('actived_menu')
+               },300)
             
         })
        

@@ -15,6 +15,9 @@ header{
     z-index: 1000;
 
 }
+button.search-btn {
+    padding: 4px;
+}
 .stycky-action{
     position: fixed;
     width: 100%;
@@ -24,6 +27,9 @@ header{
     button#close-search{
         top: 4px !important;
     }
+}
+.main-navigation ul.menu > li.menu-item-has-children > a::after{
+    display: none;
 }
 .header-top{
     background-color: var( --base-blue-3);
@@ -111,8 +117,10 @@ img.custom-logo {
     margin-left: 0;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    top: 6px;
+    top: 11px;
     color: var( --base-blue-1);
+   
+    left: 16px;
 }
 @media (max-width:767px){
     .site-header .custom-logo-link img {
@@ -214,26 +222,39 @@ img.custom-logo {
             padding: 0;
             list-style-type: none;
         }
-        li a{
+        li {
             color: #fff;
             width: 100%;
             text-align: center;
             display: block;
-            padding: 5px 0;
-        }
-        ul li:hover a{
-            background-color: white;
-            color: var( --base-blue-1);
-        }
-        ul.menu{
-            ul.sub-menu {
-                display: none;
+            padding: 5px;
+
+            a{
+                padding: 0;
+                color: #fff;
+                width: 50%;
+                text-align: center;
             }
         }
-        ul.menu:hover{
-            ul.sub-menu {
-                display: block;
+        ul li:hover{
+            background-color: var( --base-blue-1);
+        }
+        ul.actived_menu{
+            display: block !important;
+    padding-inline-start: 0 !important;
+    margin-left: 0 !important;
+            li{
+                background-color: white;
+                a{
+                    color: var( --base-blue-1) !important;
+                }
             }
+        }
+        ul.menu li{
+            ul.sub-menu {
+                display:none;
+            }
+
         }
     }
     .sidenav .closebtn {
@@ -249,7 +270,7 @@ img.custom-logo {
     padding: 0px 9px 0;
     border-radius: 30px;
     line-height: 38px;
-    border: 2px solid;
+   
       }
       .sidenav .closebtn:hover{
         text-decoration: none;
@@ -382,6 +403,34 @@ ul.navigation-mobil li a {
     background: white;
 }
 @media(min-width:768px){
+    .actived_menu{
+        ul{
+            height: auto;
+            min-height: 250px;
+        }
+    }
+    .site-header .site-branding img {
+        height: auto;
+        max-width: 129px;
+        max-height: none;
+    }
+    .logo--section {
+        display: flex;
+        align-items: center;
+    }
+    .woocommerce-active .site-header .site-branding {
+        width: 100% !important;
+        float: initial !important;
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .stycky-action .site-branding img {
+        height: auto;
+        max-width: 100px !important;
+        max-height: none;
+    }
     .woocommerce-active .site-header .main-navigation {
         width: 100% !important;
         float: left;
@@ -459,15 +508,7 @@ ul.navigation-mobil li a {
         
         margin-top: 24px;
     }
-    ul.sub-menu {
-        padding-inline-start: 0;
-        list-style-type: none;
-        position: absolute;
-        display: block;
-        height: 0;
-        overflow: hidden;
-        transition: 0.3s 0.3s;
-    }
+    
     ul.menu li a {
         display: block;
         padding: 5px 15px;
@@ -488,8 +529,7 @@ ul.navigation-mobil li a {
         text-decoration: none;
     }
     .menu-item-has-children:hover .sub-menu{
-        
-    transition: 0.3s 0.3s;
+   
     
     }
     a.cart-customlocation-desktop {

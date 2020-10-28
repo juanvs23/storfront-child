@@ -12,6 +12,7 @@
 ?>
 	</div><!-- .col-full -->
 	</div>
+</div>
 
 	<footer id="colophon" class="site-footer">
 	
