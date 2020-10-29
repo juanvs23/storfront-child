@@ -11,6 +11,8 @@ const searchSection=document.querySelector('#search-section');
     const closeSearch=document.querySelector('#close-search');
     const collapseTrigger1=document.querySelectorAll('.footer-top .collapse-trigger')
     const collapseTrigger2=document.querySelectorAll('.footer-center .collapse-trigger')
+    const kitHomeSlider=document.querySelector('#kit-home-slider')
+    const bannerSlider=document.querySelector('#banner_slider')
     const header=document.querySelector('header #menu-sticky'),
 	  scrollBtn=document.createElement('a'),
 	  footer=document.querySelector('footer'),
@@ -71,11 +73,29 @@ const   collapseAll=(triggers)=>{
 
 
 document.addEventListener('DOMContentLoaded',()=>{
-    new splide( '.splide',{
+    //slider
+    if(bannerSlider){
+        new splide( bannerSlider,{
+            type   : 'loop',
+            autoplay:true,
+            
+        } ).mount();
+    }
+   if(kitHomeSlider){
+    new splide( kitHomeSlider,{
         type   : 'loop',
-        autoplay:true,
-        
+        perPage: 3,
+        breakpoints: {
+            767: {
+                perPage:1 , // or 'completely'
+            },
+            992:{
+                perPage: 2,
+            }
+
+        }
     } ).mount();
+   }
 //top to up btn
 footer.appendChild(scrollBtn)    
 //collpase

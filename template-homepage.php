@@ -29,8 +29,50 @@ get_header(); ?>
 			 * @hooked storefront_on_sale_products      - 60
 			 * @hooked storefront_best_selling_products - 70
 			 */
-			do_action( 'homepage' );
+		//	do_action( 'homepage' );
+
+
+
+			
 			?>
+<div id="kit-home" class="">
+<h2 class="kit-home-title">Kits para o seu bebê<span class="line"></span></h2>
+<div id="kit-home-slider" class="splide">
+	<div class="splide__track">
+		<ul class="splide__list products">
+			<?php
+				$args = array(
+					'post_type' => 'product',
+					'posts_per_page' => 12
+					);
+				$loop = new WP_Query( $args );
+				if ( $loop->have_posts() ) {
+					while ( $loop->have_posts() ) : $loop->the_post();
+						wc_get_template_part( 'content', 'product' );
+					endwhile;
+				} else {
+					echo __( 'No products found' );
+				}
+				wp_reset_postdata();
+			?>
+		</ul><!–/.products–>
+	</div>
+</div>
+</div>
+			
+<section class="call-to-action">
+<h2 >Porque nós amamos nossos e seus bebês</h2>
+
+		<div class="call-to-action-description">
+			<p>Entendemos o que você precisa. Você quer produtos seguros, com propósito, suaves e puros. Você quer conveniência, flexibilidade e seleção apropriada para cada fase.</p>
+<p>Quando o assunto é o melhor para seu bebê, tudo oferecido e o que defendemos e tão puro quanto o mundo que você deseja.</p>
+
+		</div>
+		<div class="call-to-action-button">
+	<button class="btn-default btn-color-primary" onclick="location.href = '//ebabyhome.com.br/product-category/kits/';">Escolha seu kit agora</button>	
+</div>
+	
+</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

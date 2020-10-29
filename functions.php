@@ -287,7 +287,7 @@ function ztgroup_theme_scripts() {
 	//'storefront-style', get_template_directory_uri() . '/style.css'
 	
 	wp_enqueue_style($parenthandle,get_template_directory_uri().'/style.css');
-	wp_enqueue_style( 'ztgroup-theme-style', get_stylesheet_directory_uri().'/assets/css/styles.css', array($parenthandle,'storefront-woocommerce-style','storefront-child-style'), _S_VERSION );
+	wp_enqueue_style( 'ztgroup-theme-style', get_stylesheet_directory_uri().'/assets/css/styles.css', array($parenthandle,'storefront-woocommerce-style'), _S_VERSION );
 	//wp_style_add_data( 'ztgroup-theme-style', 'rtl', 'replace' );
 	wp_enqueue_script('ztgroup-theme-navigation', get_stylesheet_directory_uri().'/assets/js/scripts.js',array('jquery'),_S_VERSION,true );
 	//wp_enqueue_script( 'ztgroup-theme-navigation', get_stylesheet_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -299,9 +299,26 @@ function ztgroup_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'ztgroup_theme_scripts' );
 
 function ztgroup_theme_scripts_remove(){
-	wp_dequeue_style('storefront-woocommerce-style-css');
+	
+	//storefront-fonts
+	wp_dequeue_style('storefront-fonts');
+	wp_deregister_style('storefront-fonts');
+	//storefront-child-style
+	wp_dequeue_style('storefront-child-style');
+	wp_deregister_style('storefront-child-style');
+	//wc-block-vendors-style-css
+	wp_dequeue_style('wc-block-vendors-style');
+	wp_deregister_style('wc-block-vendors-style');
+	//wp-block-library-css
+	wp_dequeue_style('wp-block-library-theme');
+	wp_deregister_style('wp-block-library-theme');
+	//storefront-gutenberg-blocks
+	wp_dequeue_style('storefront-gutenberg-blocks');
+	wp_deregister_style('storefront-gutenberg-blocks');
+	//wp_dequeue_style('storefront-woocommerce-style-css');
 };
 add_action( 'wp_enqueue_scripts', 'ztgroup_theme_scripts_remove',9999 );
+
 
 function vpsb_custom_jquery() {
     wp_deregister_script('jquery');
@@ -309,6 +326,10 @@ function vpsb_custom_jquery() {
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'vpsb_custom_jquery');
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */
@@ -344,3 +365,42 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_stylesheet_directory() . '/inc/woocommerce.php';
 }
  */
+function slider (){
+	$content='';
+	
+	$content.='
+	<div id="banner_slider" class="splide">
+		<div class="splide__track">
+			<ul class="splide__list">
+				<li class="splide__slide">
+				<picture>
+				<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages-mobile-v6-with-btn.jpg">
+				<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages-tablet-v6-with-btn.jpg">
+				<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages_v6with-btn.jpg">
+				<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages_v6with-btn.jpg" alt="Flowers" style="width:auto;">
+			  </picture>
+			  </li>
+				<li class="splide__slide">
+				<picture>
+				<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas-mobile-v3.jpg">
+				<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas-tablet-v3btn.jpg">
+				<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas_v3btn.jpg">
+				<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas_v3btn.jpg" alt="Flowers" style="width:auto;">
+			  </picture>
+				</li>
+				<li class="splide__slide">
+				<picture>
+				<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono-mobile-v4bt.jpg">
+				<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono-tablet-v4-btn.jpg">
+				<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono_v3-btn.jpg">
+				<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono_v3-btn.jpg" alt="Flowers" style="width:auto;">
+			  </picture>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	';
+ echo $content;	
+
+}

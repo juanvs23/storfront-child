@@ -120,6 +120,7 @@
 
 							</a>
 								<ul class="mini-cart-content" >
+									
 									<li><a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a></li>
 								</ul>
 							
@@ -169,56 +170,9 @@
 </div>
 </div>
 	<div id="page" class="site">
-	<?php  if(!is_front_page()){
-		echo '<div class="container">';
-	}else{
-		function slider (){
-			$content='';
-			
-			$content.='
-			<div class="splide">
-				<div class="splide__track">
-					<ul class="splide__list">
-						<li class="splide__slide">
-						<picture>
-						<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages-mobile-v6-with-btn.jpg">
-						<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages-tablet-v6-with-btn.jpg">
-						<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages_v6with-btn.jpg">
-						<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner1_Ages_v6with-btn.jpg" alt="Flowers" style="width:auto;">
-					  </picture>
-					  </li>
-						<li class="splide__slide">
-						<picture>
-						<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas-mobile-v3.jpg">
-						<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas-tablet-v3btn.jpg">
-						<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas_v3btn.jpg">
-						<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner2_HipoglosToalhas_v3btn.jpg" alt="Flowers" style="width:auto;">
-					  </picture>
-						</li>
-						<li class="splide__slide">
-						<picture>
-						<source media="(max-width:767px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono-mobile-v4bt.jpg">
-						<source media="(min-width:768px) and (max-width:991px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono-tablet-v4-btn.jpg">
-						<source media="(min-width:992px)"  sizes="100vw" srcset="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono_v3-btn.jpg">
-						<img src="'. get_stylesheet_directory_uri().'/assets/img/Ebabyhome_Banner6_HoraSono_v3-btn.jpg" alt="Flowers" style="width:auto;">
-					  </picture>
-						</li>
-					</ul>
-				</div>
-			</div>
-		
-			';
-		 echo $content;	
-			function splider_action(){
-				?>
-					<script>
-	document.addEventListener('DOMContentLoaded',()=>{
-		
-	});
-</script>
-				<?php
-			}
-			add_action('wp_footer','splider_action',999999);
-		}
+	<?php  if(is_front_page()){
 		slider();
-	} ?>
+	
+	}
+		?>
+		<div class="container">
