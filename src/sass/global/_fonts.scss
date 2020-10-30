@@ -9,9 +9,7 @@ $fonts:'../../../assets/fonts/poppins';
 
 @font-face {
     font-family: 'Poppins-bold';
-    src: url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.eot');
-    src: local('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins Bold'), local('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold'),
-        url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+    src:url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.woff2') format('woff2'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.woff') format('woff'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
@@ -22,9 +20,8 @@ $fonts:'../../../assets/fonts/poppins';
 
 @font-face {
     font-family: 'Poppins-regular';
-    src: url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.eot');
-    src: local('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins Regular'), local('../../../ztgroup-storefront-child/assets/fonts/poppinsPoppins-Regular'),
-        url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+   
+    src: url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.woff') format('woff'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
@@ -35,9 +32,8 @@ $fonts:'../../../assets/fonts/poppins';
 
 @font-face {
     font-family: 'Poppins-thin';
-    src: url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.eot');
-    src: local('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins Thin'), local('Poppins-Thin'),
-        url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.eot?#iefix') format('embedded-opentype'),
+   
+    src: url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.eot?#iefix') format('embedded-opentype'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.woff2') format('woff2'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.woff') format('woff'),
         url('../../../ztgroup-storefront-child/assets/fonts/poppins/Poppins-Thin.ttf') format('truetype');
