@@ -11,6 +11,7 @@ const searchSection=document.querySelector('#search-section');
     const closeSearch=document.querySelector('#close-search');
     const collapseTrigger1=document.querySelectorAll('.footer-top .collapse-trigger')
     const collapseTrigger2=document.querySelectorAll('.footer-center .collapse-trigger')
+    const heMuitoSimple=document.querySelector('#he-muito-simple')
     const kitHomeSlider=document.querySelector('#kit-home-slider')
     const bannerSlider=document.querySelector('#banner_slider')
     const header=document.querySelector('header #menu-sticky'),
@@ -96,7 +97,23 @@ document.addEventListener('DOMContentLoaded',()=>{
         }
     } ).mount();
    }
+   if (heMuitoSimple) {
+       console.log('object')
+       new splide('#he-muito-simple',{
+        type   : 'loop',
+        destroy:true,
+        arrows:false,
+        autoplay:true,
+        perPage: 1,
+        breakpoints:{
+            992:{
+                destroy:false 
+            }
+        }
+       }).mount();
+   }
 //top to up btn
+
 footer.appendChild(scrollBtn)    
 //collpase
 if (window.innerWidth < 768) {

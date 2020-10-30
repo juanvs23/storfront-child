@@ -6037,6 +6037,7 @@ var hasChildrenUl = document.querySelectorAll('.menu-item-has-children ul');
 var closeSearch = document.querySelector('#close-search');
 var collapseTrigger1 = document.querySelectorAll('.footer-top .collapse-trigger');
 var collapseTrigger2 = document.querySelectorAll('.footer-center .collapse-trigger');
+var heMuitoSimple = document.querySelector('#he-muito-simple');
 var kitHomeSlider = document.querySelector('#kit-home-slider');
 var bannerSlider = document.querySelector('#banner_slider');
 var header = document.querySelector('header #menu-sticky'),
@@ -6111,6 +6112,22 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         992: {
           perPage: 2
+        }
+      }
+    }).mount();
+  }
+
+  if (heMuitoSimple) {
+    console.log('object');
+    new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default.a('#he-muito-simple', {
+      type: 'loop',
+      destroy: true,
+      arrows: false,
+      autoplay: true,
+      perPage: 1,
+      breakpoints: {
+        992: {
+          destroy: false
         }
       }
     }).mount();

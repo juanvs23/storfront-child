@@ -59,7 +59,31 @@ get_header(); ?>
 	</div>
 </div>
 </div>
-			
+<?php
+
+
+
+
+
+global $post;
+$args = array( 'taxonomy' => 'product_cat',);
+$terms = wp_get_post_terms($post->ID,'product_cat', $args);
+ 
+$count = count($terms);
+if ($count > 0) {
+ 
+  foreach ($terms as $term) {
+      echo '<div class="woocommerce-get-product-category">';
+      echo $term->description;
+      echo '</div>';
+ 
+  }
+ 
+}
+
+?>
+
+
 <section class="call-to-action">
 <h2 >Porque nós amamos nossos e seus bebês</h2>
 
@@ -72,6 +96,78 @@ get_header(); ?>
 	<button class="btn-default btn-color-primary" onclick="location.href = '//ebabyhome.com.br/product-category/kits/';">Escolha seu kit agora</button>	
 </div>
 	
+</section>
+<section id="he-muito-simple-container">
+<h2 class="he-muito-simple-title">
+É muito simples
+</h2>
+<div id="he-muito-simple" class="splide" >
+<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<div class="container">
+				<div class="row  content-mobil">
+					<div class="col-md-4">
+					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/1-1-200x200-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/1-1-200x200-1.png">
+					</div>
+					<div class="col-md-8 pasos">
+						<span> 1. </span>
+					 <p class="">
+					 Preencha seu cadastro incluindo os dados básicos do seu filho. Nós ajudaremos a cuidar e recomendar os melhores produtos para cada estágio do seu crescimento.
+					 </p>
+					</div>
+				</div>
+				</div>
+			</li>
+			<li class="splide__slide">
+				<div class="container">
+				<div class="row invert-content-mobil">
+					<div class="col-md-8 pasos">
+						<span> 2. </span>
+					<p class="">
+					 Selecione o Kit da sua preferência, mudando o aroma, a fragrância, e Veja o que se adéqua melhor para o seu bebê e ganhe a partir de sua segunda compra recorrente uma surpresa.
+					 </p>
+					</div>
+					<div class="col-md-4">
+					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/paso2.2-200x200-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/paso2.2-200x200-1.png">
+					</div>
+				</div>
+				</div>
+			</li>
+			<li class="splide__slide">
+				<div class="container">
+				<div class="row content-mobil">
+					<div class="col-md-4">
+					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/03/3-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/03/3-1.png">
+					</div>
+					<div class="col-md-8 pasos">
+						<span> 3. </span>
+						<p class="">
+					 Compre adicionalmente outros produtos que você ame para o seu consentido.
+					 </p>
+					</div>
+				</div>
+				</div>
+			</li>
+			<li class="splide__slide">
+				<div class="container">
+				<div class="row invert-content-mobil">
+					<div class="col-md-8 pasos">
+					
+					 <span> 4. </span>
+					 <p class="">
+					 Faça seu kit ideal. Você pode definir seu proprio kit com os produtos de sua escolha, para você receber com recorrência especifica para cada item.
+					 </p>
+					</div>
+					<div class="col-md-4">
+					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/10/box-ebaby-2-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/10/box-ebaby-2-1.png">
+					</div>
+				</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 </section>
 
 		</main><!-- #main -->

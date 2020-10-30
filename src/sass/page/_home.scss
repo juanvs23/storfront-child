@@ -47,6 +47,7 @@ h2{
         button.splide__arrow.splide__arrow--prev {
             margin-left: -38px;
         }
+       
         h2.kit-home-title {
             font-family: Poppins-bold,sans-serif;
             margin: 0 0 18px 0px;
@@ -133,10 +134,79 @@ section.call-to-action {
                 text-align: center;
                 font-size: 15px;
             }
+           
         
     }
     @media (min-width:768px) and (max-width:992px){
         
       
     }
+}
+#he-muito-simple-container{
+    padding: 45px;
+    .pasos span {
+        font-size: 44px;
+        width: 20%;
+        margin-top: -36px;
+        margin-right: 18px;
+        font-family: $popinsB;
+    }
+    ul.splide__pagination {
+        bottom: -2rem;
+    }
+    .splide__slide img {
+        vertical-align: bottom;
+        display: block;
+        margin: auto;
+    }
+    .pasos {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    .container{
+        max-width: 800px;
+        display: block;
+        margin: auto;
+    }
+   
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: 30px;
+        letter-spacing: 1px;
+        font-family: $popinsB;
+    }
+    @media (max-width:767px){
+        .invert-content-mobil {
+            flex-direction: column-reverse;
+           
+        }
+       
+        padding: 35px 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+       
+        h2 {
+            text-align: center;
+            font-size: 1.2rem;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+            font-family: $popinsB;
+        }
+       
+    
+}
+@media (min-width:992px){
+    div#he-muito-simple-track {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+    .pasos {
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+}
 }
