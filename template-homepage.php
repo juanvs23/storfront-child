@@ -37,17 +37,20 @@ get_header(); ?>
 			?>
 <div id="kit-home" class="">
 <h2 class="kit-home-title">Kits para o seu bebê<span class="line"></span></h2>
+
 <div id="kit-home-slider" class="splide">
 	<div class="splide__track">
 		<ul class="splide__list products">
 			<?php
 				$args = array(
 					'post_type' => 'product',
-					'posts_per_page' => 12
+					'posts_per_page' => 12,
+
 					);
 				$loop = new WP_Query( $args );
 				if ( $loop->have_posts() ) {
 					while ( $loop->have_posts() ) : $loop->the_post();
+					
 						wc_get_template_part( 'content', 'product' );
 					endwhile;
 				} else {
@@ -59,29 +62,7 @@ get_header(); ?>
 	</div>
 </div>
 </div>
-<?php
 
-
-
-
-
-global $post;
-$args = array( 'taxonomy' => 'product_cat',);
-$terms = wp_get_post_terms($post->ID,'product_cat', $args);
- 
-$count = count($terms);
-if ($count > 0) {
- 
-  foreach ($terms as $term) {
-      echo '<div class="woocommerce-get-product-category">';
-      echo $term->description;
-      echo '</div>';
- 
-  }
- 
-}
-
-?>
 
 
 <section class="call-to-action">
@@ -169,6 +150,33 @@ if ($count > 0) {
 	</div>
 </div>
 </section>
+<!--<section id="nuestros-productos">
+<h2 class="he-muito-simple-title">
+É muito simples
+</h2>
+<?php
+
+/*
+$categories = get_terms( ['taxonomy' => 'product_cat'] );
+$content='';
+$content.='<div class="product-list-tab">';
+$count=0;
+foreach ($categories as $category) {
+	if($count==0){
+		$content.='<button id="tab-'.$category->name.'" class="button-list active">'.$category->name.'</button>';
+		
+	}else{
+		$content.='<button id="tab-'.$category->name.'" class="button-list">'.$category->name.'</button>';
+		
+	}
+	$count++;
+}
+
+$content.='</div>';
+echo $content;
+*/
+?>
+</section>-->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
