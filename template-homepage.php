@@ -45,6 +45,16 @@ get_header(); ?>
 				$args = array(
 					'post_type' => 'product',
 					'posts_per_page' => 12,
+					'tax_query'=>array(
+						'order'=>'date',
+							array(
+								'taxonomy' => 'product_cat',
+							'field'=>'slug',
+							'terms'=>'music'//aqui el slug de la categoria del producto
+							)
+							
+						),
+					
 
 					);
 				$loop = new WP_Query( $args );
