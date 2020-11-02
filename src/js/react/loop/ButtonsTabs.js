@@ -16,14 +16,14 @@ const ButtonsTabs=(props)=>{
      console.log(categories)
      
 return (
-    <div className="product-list-tab">
+    <ul className="product-list-tab">
         {
            categories.map((category,i)=>{
             const isActivate=active===i ? 'active':'';
             return(<ButtonsTab  indicador={i}  activetab={isActivate} key={category.id} cat={category} />)
            })
         }
-    </div>
+    </ul>
 )
 }
 export default ButtonsTabs

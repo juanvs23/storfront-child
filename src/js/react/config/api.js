@@ -1,3 +1,3 @@
 export const config={
-    url:'http://localhost/php/woocommerce-theme/'
+    url:'https://ebabyhome.com.br/'
 }

@@ -14,7 +14,7 @@ const  ButtonsTab=(props)=>{
     }
    const contProduct=count ? `(${count})`:''
   
-return(<button onClick={chanceTabClick} id={`tab-${name}`}className={`button-list ${props.activetab}`}>{ name } {contProduct}</button>)
+return(<li onClick={chanceTabClick} id={`tab-${name}`}className={`button-list ${props.activetab}`}>{ name } {contProduct}</li>)
 }
 
 export default ButtonsTab

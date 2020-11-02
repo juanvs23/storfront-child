@@ -1,10 +1,11 @@
 import splide from "@splidejs/splide";
-import React from "react";
-import ReactDOM from 'react-dom';
 import { tabsPayment } from "./modulos/tabs";
-import LoopComponent from './react/loop/LoopComponent'
-import CarritoComponent from './react/CarritoComponent'
 
+/* import React from "react";
+import ReactDOM from 'react-dom';
+import LoopComponent from './react/loop/LoopComponent'
+import CarritoComponent from './react/CarritoComponent' */
+/* 
 const root = document.getElementById('app');
 if(root){
 const app= ReactDOM.render(
@@ -15,7 +16,7 @@ const app= ReactDOM.render(
  /*  const carrito =ReactDOM.render(
     <CarritoComponent/>,
     document.getElementById('carrito')
-  ); */
+  ); */ 
 
 
 const searchSection=document.querySelector('#search-section');
