@@ -19,6 +19,7 @@ const app= ReactDOM.render(
   ); */ 
 
 
+  
 const searchSection=document.querySelector('#search-section');
     const openSearchBtn=document.querySelector('#open-search-btn');
     const searchContainer=document.querySelector('.search-container form')
