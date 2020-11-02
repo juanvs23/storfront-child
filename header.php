@@ -88,6 +88,7 @@
 				</div>
 				<div id="cart-desktop-section" class="d-none d-md-block col-md-3 cart-desktop  ">
 				<?php do_action( 'storefront_header_cart' ); ?>
+				<!--<div id="carrito"></div>-->
 				<a class="cart-customlocation-desktop" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-cart"></i> <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
 				</div>
 				</div>
@@ -170,7 +171,7 @@
 </div>
 </div>
 	<div id="page" class="site">
-	<?php  if(is_front_page()){
+	<?php  if(is_front_page()|| is_shop()){
 		slider();
 	
 	}

@@ -1,8 +1,28 @@
 import splide from "@splidejs/splide";
+import React from "react";
+import ReactDOM from 'react-dom';
+import { tabsPayment } from "./modulos/tabs";
+import LoopComponent from './react/loop/LoopComponent'
+import CarritoComponent from './react/CarritoComponent'
+
+const root = document.getElementById('app');
+if(root){
+const app= ReactDOM.render(
+    <LoopComponent title={'MAIS VENDIDOS'} /> ,
+    root
+  );
+}
+ /*  const carrito =ReactDOM.render(
+    <CarritoComponent/>,
+    document.getElementById('carrito')
+  ); */
+
+
 const searchSection=document.querySelector('#search-section');
     const openSearchBtn=document.querySelector('#open-search-btn');
     const searchContainer=document.querySelector('.search-container form')
     const openMenu =document.querySelector('#open-menu')
+    const woocommerceCheckout=document.querySelector('.woocommerce-checkout')
     const cerradorBtn=document.querySelector('#cerradorBtn')
     const mobilMinicart=document.querySelector('#cart-customlocation');
     const openMinicartMobil=document.querySelector('#shopping-cart')
@@ -168,7 +188,11 @@ closeSearch.addEventListener('click',()=>{
 
      })
     
-      
+ if(woocommerceCheckout){
+     console.log('hola desde checkout')
+     //tabs
+tabsPayment();
+ }     
 
    
 
@@ -176,6 +200,8 @@ closeSearch.addEventListener('click',()=>{
 
 
 });
+
+
 
 //sticky action
 window.addEventListener('scroll',(e)=>{

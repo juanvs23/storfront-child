@@ -45,3 +45,12 @@ a:focus {
 .show-action{
     display: block !important;
 }
+header.woocommerce-products-header,
+header.entry-header {
+    padding: 50px 0 !important;
+    h1{
+        font-family: $popinsB;
+        font-size: 40px;
+        line-height: 1.3;
+    }
+}
