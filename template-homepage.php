@@ -35,44 +35,7 @@ get_header(); ?>
 
 			
 			?>
-<div id="kit-home" class="">
-<h2 class="kit-home-title">Kits para o seu bebê<span class="line"></span></h2>
-
-<div id="kit-home-slider" class="splide">
-	<div class="splide__track">
-		<ul class="splide__list products">
-			<?php
-				$args = array(
-					'post_type' => 'product',
-					'posts_per_page' => 12,
-					'tax_query'=>array(
-						'order'=>'date',
-							array(
-								'taxonomy' => 'product_cat',
-							'field'=>'slug',
-							'terms'=>'music'//aqui el slug de la categoria del producto
-							)
-							
-						),
-					
-
-					);
-				$loop = new WP_Query( $args );
-				if ( $loop->have_posts() ) {
-					while ( $loop->have_posts() ) : $loop->the_post();
-					
-						wc_get_template_part( 'content', 'product' );
-					endwhile;
-				} else {
-					echo __( 'No products found' );
-				}
-				wp_reset_postdata();
-			?>
-		</ul><!–/.products–>
-	</div>
-</div>
-</div>
-
+<?php carruselSection('music','Kits para o seu bebê');?>
 
 
 <section class="call-to-action">
@@ -167,6 +130,8 @@ get_header(); ?>
 <?php
 
 /*
+WP_Term Object ( [term_id] => 16 [name] => Clothing [slug] => clothing [term_group] => 0 [term_taxonomy_id] => 16 [taxonomy] => product_cat [description] => [parent] => 0 [count] => 14 [filter] => raw )
+
 $categories = get_terms( ['taxonomy' => 'product_cat'] );
 $content='';
 $content.='<div class="product-list-tab">';
@@ -187,6 +152,9 @@ echo $content;
 */
 ?>
 </section>-->
+<div id="app">
+
+</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
