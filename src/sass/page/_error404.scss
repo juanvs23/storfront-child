@@ -1,0 +1,97 @@
+.error404{
+    .error-404-not-found{
+        min-height: 69vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 992px;
+        margin: auto;
+    
+    .error-404-wrapper {
+        display: flex;
+        .error-item{
+            width: calc(100%/2);
+        }
+    }
+    }
+    @media (max-width:767px) {
+        .error-404-wrapper {
+
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            .error-item{
+                width: 100% !important;
+                padding: 15px;
+                img.custom-logo {
+                    width: 70%;
+                    margin: auto;
+                    display: block;
+                    max-width: 350px;
+                }
+                header.page-header{
+                    h1{
+                        font-size: 30px;
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .search-content {
+                    display: flex;
+                    justify-content: center;
+                    form.search-form {
+                        display: flex;
+                        justify-content: center;
+                        label {
+                            display: inline-block;
+                            margin-bottom: 0;
+                        }
+                    }
+                    
+                }
+               
+            }
+
+        }
+    }
+    @media (min-width:768px) and (max-width:992px) {
+        .error-404-wrapper {
+
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            .error-item{
+                width: 100% !important;
+                padding: 15px;
+                img.custom-logo {
+                    width: 70%;
+                    margin: auto;
+                    display: block;
+                    max-width: 350px;
+                }
+                header.page-header{
+                    h1{
+                        font-size: 30px;
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .search-content {
+                    display: flex;
+                    justify-content: center;
+                }
+               
+            }
+
+        }
+    }
+      
+}

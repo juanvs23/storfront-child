@@ -316,6 +316,9 @@ function ztgroup_theme_scripts_remove(){
 	wp_dequeue_style('storefront-gutenberg-blocks');
 	wp_deregister_style('storefront-gutenberg-blocks');
 	//wp_dequeue_style('storefront-woocommerce-style-css');
+	//storefront-style-css
+	//wp_dequeue_style('storefront-style');
+	//wp_deregister_style('storefront-style');
 };
 add_action( 'wp_enqueue_scripts', 'ztgroup_theme_scripts_remove',9999 );
 

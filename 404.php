@@ -10,48 +10,34 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary-404" class="site-main">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ztgroup-theme' ); ?></h1>
+		<section class="error-404-not-found">
+			
+			<div class="error-404-wrapper">
+				<div class="error-item error-404-images">
+					<?php 
+					the_custom_logo();
+					?>
+				</div>
+				<div class="error-item error-404-content">
+				<header class="page-header">
+				<h1 class="page-title"><?php esc_html_e( 'Ops! Essa página não pode ser encontrada.', 'ztgroup-theme' ); ?></h1>
 			</header><!-- .page-header -->
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ztgroup-theme' ); ?></p>
+						<div class="search-content">
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ztgroup-theme' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'ztgroup-theme' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$ztgroup_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ztgroup-theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$ztgroup_theme_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
+						<?php
+						get_search_form();
+	
+						
+						?>
+						</div>
+	
+						
+	
+				</div><!-- .page-content -->
+			</div>
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->
