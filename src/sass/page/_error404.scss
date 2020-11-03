@@ -22,7 +22,7 @@
             max-width: 600px;
             .error-item{
                 width: 100% !important;
-                padding: 15px;
+               
                 img.custom-logo {
                     width: 70%;
                     margin: auto;
@@ -39,8 +39,10 @@
                 p{
                     font-size: 16px;
                     text-align: center;
+                   
                 }
                 .search-content {
+                    
                     display: flex;
                     justify-content: center;
                     form.search-form {
@@ -49,6 +51,9 @@
                         label {
                             display: inline-block;
                             margin-bottom: 0;
+                            input{
+                                width: 100%;
+                            }
                         }
                     }
                     
