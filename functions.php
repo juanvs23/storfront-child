@@ -451,3 +451,33 @@ function carruselSection($category,$title){
 <?php
 echo ob_get_clean();
 }
+//minicart
+function jma_woo_minicart($atts){  
+	ob_start();
+	global $woocommerce; 
+	
+	echo '<a class="cart-contents" href="' . ' $woocommerce->cart->get_cart_url()' . '" title="View your shopping cart">';
+	echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count) . ' - ' . $woocommerce->cart->get_cart_total() . '</a>';
+	
+	$x = ob_get_contents();
+	ob_end_clean();
+	return $x;
+   }
+   add_shortcode('jma_woo_minicart','jma_woo_minicart');
+	
+   // Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
+   function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+	
+	ob_start();
+	
+	?>
+	<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<?php
+	
+	$fragments['a.cart-contents'] = ob_get_clean();
+	
+	return $fragments;
+	
+   }
+   add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');

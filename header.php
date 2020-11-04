@@ -65,7 +65,7 @@
 					<div class="functional-container">
 						<div class="open-search">
 							<button id="shopping-cart" class="shopping-cart-class header-btn btn-default" ><i class="fa fa-shopping-bag"></i></button>
-							<a class="cart-customlocation" id="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
+							
 						</div>	
 						<div class="open-search">
 							<button  id="open-search-btn"  class="open-search-btn header-btn btn-default" ><i class="fa fa-search"></i></button>
@@ -88,8 +88,9 @@
 				</div>
 				<div id="cart-desktop-section" class="d-none d-md-block col-md-3 cart-desktop  ">
 				<?php do_action( 'storefront_header_cart' ); ?>
-				<!--<div id="carrito"></div>-->
-				<a class="cart-customlocation-desktop" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-cart"></i> <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
+			
+				
+				<button class="shop-minicart-desktop"> <i class="fa fa-shopping-cart"></i> <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?> </button>
 				</div>
 				</div>
 			</div>
@@ -99,36 +100,9 @@
 				<div class="container">
 					<div class="row">
 					<div class="menu-container ">
-					<ul class="navigation-mobil">
-						<?php 
-						if(is_user_logged_in()){
-							echo '<li> <a class="" href="'. network_site_url( '/' ).'mi-cuenta/customer-logout/"> <i class="fa fa-sign-out-alt"></i> </a> </li>';
-							
-							echo '<li> <a class="'. network_site_url( '/' ).'mi-cuenta/" href="#"> <i class="fa fa-home"></i> </a> </li>';
-						}else{
-							echo '<li> <a title="Cadastre-se"  class="" href="'. network_site_url( '/' ).'mi-cuenta/?=registrar=si"> <i class="fa fa-user-plus"></i> </a> </li>';
-							echo '<li> <a class="" href="'. network_site_url( '/' ).'mi-cuenta/?=registrar=no"> <i class="fa fa-user"></i> </a> </li>';
-						}
-						?>
-						
-						
-
-						
-						
-						<li class="class-mini-cart"> 
-							<a class="open-minicart-mobil" href="#">
-								<i class="fa fa-shopping-cart"></i> 
-
-							</a>
-								<ul class="mini-cart-content" >
-									
-									<li><a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a></li>
-								</ul>
-							
-						</li>
-						<li> <a class="" conclick="openNav()" id="open-menu" href="javascript:void(0)"> <i class="fa fa-ellipsis-v"></i> </a> </li>
-					</ul>
+				
 				</div>
+				
 				<div class="nav-container">
 					<nav id="site-navigation" class="main-navigation">
 						
@@ -149,7 +123,10 @@
 </div>
 		</div>
 	</header><!-- #masthead -->
-	
+	<div class="cart-customlocation" id="cart-customlocation"  title="<?php _e( 'View your shopping cart' ); ?>"><!--<?php //echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php //echo WC()->cart->get_cart_total(); ?>-->
+	<div class="close-cart"><i class="fa fa-times"></i></div>
+	<div id="carrito"></div>
+	</div>
 <div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" id="cerradorBtn">&times;</a>
 <?php

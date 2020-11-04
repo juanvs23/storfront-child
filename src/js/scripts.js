@@ -1,10 +1,12 @@
 import splide from "@splidejs/splide";
 import { tabsPayment } from "./modulos/tabs";
 
-/* import React from "react";
+
+
+ import React from "react";
 import ReactDOM from 'react-dom';
-import LoopComponent from './react/loop/LoopComponent'
-import CarritoComponent from './react/CarritoComponent' */
+//import LoopComponent from './react/loop/LoopComponent'
+import CarritoComponent from './react/carrito/CarritoComponent' 
 /* 
 const root = document.getElementById('app');
 if(root){
@@ -12,12 +14,11 @@ const app= ReactDOM.render(
     <LoopComponent title={'MAIS VENDIDOS'} /> ,
     root
   );
-}
- /*  const carrito =ReactDOM.render(
+}*/
+  const carrito =ReactDOM.render(
     <CarritoComponent/>,
     document.getElementById('carrito')
-  ); */ 
-
+  ); 
 
   
 const searchSection=document.querySelector('#search-section');
@@ -28,6 +29,7 @@ const searchSection=document.querySelector('#search-section');
     const cerradorBtn=document.querySelector('#cerradorBtn')
     const mobilMinicart=document.querySelector('#cart-customlocation');
     const openMinicartMobil=document.querySelector('#shopping-cart')
+    const shopMinicartDesktop = document.querySelector('.shop-minicart-desktop')
     const hasChildrenMenus=document.querySelectorAll('.menu-item-has-children')
     const hasChildrenUl=document.querySelectorAll('.menu-item-has-children ul');
     const closeSearch=document.querySelector('#close-search');
@@ -150,17 +152,45 @@ closeSearch.addEventListener('click',()=>{
     searchOpen(openSearchBtn)
 })
 
-    openMinicartMobil.addEventListener('click',()=>{
 
+
+    openMinicartMobil.addEventListener('click',()=>{
         if(!mobilMinicart.classList.contains('opened')){
             mobilMinicart.classList.add('opened')
-            mobilMinicart.style.display="block"
+            mobilMinicart.style.opacity="1"
+            mobilMinicart.style.width='250px';
+        }else{
+            mobilMinicart.style.opacity="0"
+            mobilMinicart.classList.remove('opened')
+            mobilMinicart.style.width='0';
+        }
+        
+    })
+    //close-cart
+    document.querySelector('.close-cart').addEventListener('click',()=>{
+        if(!mobilMinicart.classList.contains('opened')){
+            mobilMinicart.classList.add('opened')
+            mobilMinicart.style.opacity="1"
+            mobilMinicart.style.width='250px';
+        }else{
+            mobilMinicart.style.opacity="0"
+            mobilMinicart.classList.remove('opened')
+            mobilMinicart.style.width='0';
+        }
+    })
+
+    shopMinicartDesktop.addEventListener('click',()=>{
+        if(!mobilMinicart.classList.contains('opened')){
+            mobilMinicart.classList.add('opened')
+            mobilMinicart.style.opacity="1"
+            mobilMinicart.style.width='350px';
             
         }else{
-            mobilMinicart.style.display="none"
+            mobilMinicart.style.opacity="0"
             mobilMinicart.classList.remove('opened')
-           
+            mobilMinicart.style.width='0';
         }
+       
     })
     hasChildrenMenus.forEach((hasChildrenMenu,i)=>{
         hasChildrenMenu.addEventListener('mouseleave',()=>{
@@ -191,7 +221,7 @@ closeSearch.addEventListener('click',()=>{
      })
     
  if(woocommerceCheckout){
-     console.log('hola desde checkout')
+    
      //tabs
 tabsPayment();
  }     
