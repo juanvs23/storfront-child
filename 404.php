@@ -24,7 +24,7 @@ get_header();
 				<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Ops! Essa página não pode ser encontrada.', 'ztgroup-theme' ); ?></h1>
 			</header><!-- .page-header -->
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ztgroup-theme' ); ?></p>
+					<p><?php esc_html_e( 'Parece que nada foi encontrado neste local. Talvez tente um dos links abaixo ou uma pesquisa?', 'ztgroup-theme' ); ?></p>
 						<div class="search-content">
 
 						<?php

@@ -3,6 +3,16 @@
        
         padding: 0 !important;
     }
+    .widget_nav_menu ul li{
+        padding-left: 0;
+        a{
+            color: white !important;
+            &:hover{
+                text-decoration: none;
+                opacity: 0.8;
+            }
+        }
+    }
     .footer-top {
         padding: 30px 50px;
         background-color: var(--base-gray-Light);
@@ -34,6 +44,10 @@
         padding: 40px 50px;
         background-color: var(--base-blue-1);
         color: white;
+        span.widget-title {
+            font-size: 20px;
+            color: white !important;
+        }
     }
     .footer-bottom {
         padding: 20px 50px;
