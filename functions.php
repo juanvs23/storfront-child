@@ -287,7 +287,7 @@ function ztgroup_theme_scripts() {
 	//'storefront-style', get_template_directory_uri() . '/style.css'
 	
 	wp_enqueue_style($parenthandle,get_template_directory_uri().'/style.css');
-	wp_enqueue_style( 'ztgroup-theme-style', get_stylesheet_directory_uri().'/assets/css/styles.css', array($parenthandle,'storefront-woocommerce-style'), _S_VERSION );
+	wp_enqueue_style( 'ztgroup-theme-style', get_stylesheet_directory_uri().'/assets/css/styles.css', array($parenthandle), _S_VERSION );
 	//wp_style_add_data( 'ztgroup-theme-style', 'rtl', 'replace' );
 	wp_enqueue_script('ztgroup-theme-navigation', get_stylesheet_directory_uri().'/assets/js/scripts.js',array('jquery'),_S_VERSION,true );
 	//wp_enqueue_script( 'ztgroup-theme-navigation', get_stylesheet_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -315,7 +315,9 @@ function ztgroup_theme_scripts_remove(){
 	//storefront-gutenberg-blocks
 	wp_dequeue_style('storefront-gutenberg-blocks');
 	wp_deregister_style('storefront-gutenberg-blocks');
-	//wp_dequeue_style('storefront-woocommerce-style-css');
+	//storefront-woocommerce-style
+	wp_dequeue_style('storefront-woocommerce-style');
+	wp_deregister_style('storefront-woocommerce-style');
 	//storefront-style-css
 	//wp_dequeue_style('storefront-style');
 	//wp_deregister_style('storefront-style');
