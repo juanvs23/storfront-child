@@ -6,8 +6,11 @@ label.form-label {
 .home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
     margin-bottom: 0 !important;
 }
-.widget_nav_menu ul li::before{
-    display: none;
+.widget_nav_menu ul li{
+    padding-left: 0 !important;
+    &:before{
+        display: none !important;
+    }
 }
 .site-header {
     border-bottom-color: #f0f0f0;
@@ -412,9 +415,13 @@ ul.navigation-mobil li a {
             min-height: 250px;
         }
     }
+    .nav-container ul {
+        display: flex !important;
+        justify-content: space-between;
+    }
     .site-header .site-branding img {
         height: auto;
-        max-width: 129px;
+        max-width: 129px !important;
         max-height: none;
     }
     .logo--section {
