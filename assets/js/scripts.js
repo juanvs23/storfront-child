@@ -6112,14 +6112,7 @@ var searchOpen = function searchOpen(id) {
     searchSection.classList.add('opened');
     searchSection.style.height = "100%";
     searchSection.style.display = "block";
-    id.style.visibility = "hidden";
-    setTimeout(function () {
-      searchSection.style.opacity = "1";
-      searchContainer.style.height = "40px";
-    }, 10);
   } else {
-    searchContainer.style.height = "0px";
-    id.style.visibility = "visible";
     setTimeout(function () {
       searchSection.classList.remove('opened');
       searchSection.style.height = "0";
@@ -6257,7 +6250,13 @@ window.addEventListener('scroll', function (e) {
   } else {
     scrollBtn.classList.remove('show-action');
   }
-});
+}); //form widget
+
+if (document.querySelector('#form-widget')) {
+  document.querySelector('#form-widget').addEventListener('submit', function (e) {
+    e.preventDefault();
+  });
+}
 
 /***/ }),
 

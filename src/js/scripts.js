@@ -51,15 +51,10 @@ const searchSection=document.querySelector('#search-section');
             searchSection.classList.add('opened')
             searchSection.style.height="100%";
             searchSection.style.display="block"
-            id.style.visibility="hidden"
-            setTimeout(()=>{
-                searchSection.style.opacity="1"
-                searchContainer.style.height="40px"
-            },10)
+           
+          
         }else{
-            searchContainer.style.height="0px"
-            id.style.visibility="visible"
-
+           
             setTimeout(()=>{
                 searchSection.classList.remove('opened')
                 searchSection.style.height="0";
@@ -219,6 +214,13 @@ window.addEventListener('scroll',(e)=>{
 			scrollBtn.classList.remove('show-action')
 	   }
 }) 
+
+//form widget
+if (document.querySelector('#form-widget')) {
+    document.querySelector('#form-widget').addEventListener('submit',(e)=>{
+        e.preventDefault();
+    })
+}
 
 
 

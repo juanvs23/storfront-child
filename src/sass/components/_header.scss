@@ -30,9 +30,7 @@ button.search-btn {
     top:0;
     left: 0;
     z-index: 1000;
-    button#close-search{
-        top: 4px !important;
-    }
+   
 }
 .main-navigation ul.menu > li.menu-item-has-children > a::after{
     display: none;
@@ -293,7 +291,7 @@ img.custom-logo {
         position: fixed;
     width: 100%;
     height: 100% !important;
-    background: rgba(4, 122, 255,0.5);
+    background: rgba(4, 122, 255,0.9);
     z-index: 100;
     top: 0;
     left: 0;
@@ -358,10 +356,12 @@ img.custom-logo {
             font-size: 30px;
             font-weight: 300;
             position: absolute;
-            top: 109px;
+            top: 25px;
             right: 1px;
             color: white;
+            padding: 9px;
             opacity: 0.5;
+
         }
     }
     button.open-search-btn {
@@ -414,6 +414,13 @@ ul.navigation-mobil li a {
             height: auto;
             min-height: 250px;
         }
+    }
+    .main-navigation ul.menu ul.sub-menu, .main-navigation ul.nav-menu ul.children {
+        background-color: #f0f0f0;
+        display: block !important;
+    }
+    .main-navigation ul.menu > li.menu-item-has-children > a::after{
+        display: none !important;
     }
     .nav-container ul {
         display: flex !important;
