@@ -16,8 +16,8 @@ form#form-widget{
 .footer-top h3 {
     
     margin-bottom: 0;
-    font-size: 18px;
-    font-weight: bolder;
+    font-size: 18px !important;
+    font-weight: bolder !important;
     @media (min-width:768px){
         text-align: center;
     }
