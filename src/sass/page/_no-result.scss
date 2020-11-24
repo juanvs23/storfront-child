@@ -1,0 +1,96 @@
+.search-no-results{
+    h1.page-title {
+        margin-top: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .not-found-wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 80px 0;
+        max-width: 1000px;
+        margin: auto;
+        .not-found-text p {
+            padding-top: 10%;
+        }
+        .not-found-text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+        }
+        @media(max-width:767px){
+            display: block;
+            padding: 15px 0;
+            img.custom-logo{
+                width: 80%;
+                display: block;
+                margin: auto;
+                margin-bottom: 30px;
+            }
+            .not-found-text p {
+                text-align: center;
+                font-weight: bold;
+                padding-top:0;
+            }
+    
+        }
+    }
+    @media(max-width:767px){
+        h1.page-title {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+
+}
+
+ul.product-results{
+    display: grid;
+grid-template-columns: auto auto auto;
+margin: 0;
+    a{
+      position: relative;
+    }
+    li {
+      padding: 15px;
+      a.button {
+        display: block;
+        text-align: center;
+        max-width: 80%;
+        margin: auto;
+    }
+      img {
+        vertical-align: bottom;
+        margin: auto;
+        margin-bottom: 13px;
+    }
+    h2.woocommerce-loop-product__title {
+      text-align: center;
+font-size: 17px;
+min-height: 80px;
+
+  }
+  span.onsale {
+    position: absolute;
+    top: 7px;
+    background:#0095D2;
+    color: white;
+    border: none;
+}
+span.price {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+}
+@media (max-width:767px){
+grid-template-columns:auto;
+}
+@media (min-width:768px) and(max-width:991px) {
+grid-template-columns: auto  auto;
+}
+
+  } 

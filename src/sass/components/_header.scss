@@ -111,20 +111,55 @@ img.custom-logo {
     margin-right: -15px;
     background: white;
 }
+button.search-btn{
+
+}
 .menu-item-has-children {
     /* content: "hola"; */
     position: relative;
 }
-.menu-item-has-children:before {
-    content: "\f078";
-    position: absolute;
-    margin-left: 0;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    top: 11px;
-    color: var( --base-blue-1);
-   
-    left: 16px;
+.menu-item-has-children{
+    transition: 0.3s 0.3s;
+    &:before {
+        content: "\f078";
+        position: absolute;
+        margin-left: 0;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        top: 11px;
+        color: var( --base-blue-1);
+      
+        left:0;
+        @media (max-width:767px){
+            color:white;
+           
+        left: 19px;
+        top: 6px;
+        }
+    }
+    &:hover{
+      &:before{
+            //f077
+        content: "\f077";
+      }
+       }
+
+}
+button.splide__arrow{
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+button.search-btn{
+    &:hover{
+        background-color: transparent;
+        outline: none;
+    }
+    &:focus{
+        background-color: transparent;
+        outline: none;
+    }
 }
 @media (max-width:767px){
     .site-header .custom-logo-link img {
@@ -455,7 +490,7 @@ ul.navigation-mobil li a {
         clear: both;
     }
     .main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
-        padding: 10px !important;
+        padding: 10px 30px !important;
     }
     .open {
         display: none;

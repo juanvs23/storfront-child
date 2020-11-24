@@ -9,7 +9,7 @@
  */
 
 do_action( 'storefront_loop_before' );
-
+echo '<ul class="product-results">';
 while ( have_posts() ) :
 	the_post();
 
@@ -18,10 +18,12 @@ while ( have_posts() ) :
 	 * If you want to override this in a child theme, then include a file
 	 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 	 */
-	get_template_part( 'content', get_post_format() );
+
+	//get_template_part( 'content', get_post_format() );
+	wc_get_template_part( 'content', 'product' );
 
 endwhile;
-
+echo '</ul>';
 /**
  * Functions hooked in to storefront_paging_nav action
  *

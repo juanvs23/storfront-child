@@ -6,15 +6,21 @@
  */
  @font-face {
     font-family: 'star';
-    src: url("../../../../../plugins/woocommerce/assets/fonts/star.eot");
-    src: url("../../../../../plugins/woocommerce/assets/fonts/star.eot?#iefix") format("embedded-opentype"), url("../../../../../plugins/woocommerce/assets/fonts/star.woff") format("woff"), url("../../../../../plugins/woocommerce/assets/fonts/star.ttf") format("truetype"), url("../../../../../plugins/woocommerce/assets/fonts/star.svg#star") format("svg");
+    src: url("../../../../plugins/woocommerce/assets/fonts/star.eot");
+    src: url("../../../../plugins/woocommerce/assets/fonts/star.eot?#iefix") format("embedded-opentype"), 
+          url("../../../../plugins/woocommerce/assets/fonts/star.woff") format("woff"), 
+          url("../../../../plugins/woocommerce/assets/fonts/star.ttf") format("truetype"), 
+          url("../../../../plugins/woocommerce/assets/fonts/star.svg#star") format("svg");
     font-weight: normal;
     font-style: normal; }
   
   @font-face {
     font-family: 'WooCommerce';
-    src: url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.eot");
-    src: url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix") format("embedded-opentype"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.woff") format("woff"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.ttf") format("truetype"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce") format("svg");
+    src: url("../../../../plugins/woocommerce/assets/fonts/WooCommerce.eot");
+    src: url("../../../../plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix") format("embedded-opentype"), 
+         url("../../../../plugins/woocommerce/assets/fonts/WooCommerce.woff") format("woff"), 
+         url("../../../../plugins/woocommerce/assets/fonts/WooCommerce.ttf") format("truetype"), 
+         url("../../../../plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce") format("svg");
     font-weight: normal;
     font-style: normal; }
   
@@ -62,7 +68,10 @@
    */
   .woocommerce-active .site-branding {
     float: left; }
-  
+    .single-product div.product p.price {
+      font-size: 2em;
+      margin: 0 0  1.41575em !important;
+  }
   .site-header-cart {
     list-style-type: none;
     margin-left: 0;
@@ -1511,8 +1520,38 @@
    */
   .storefront-sticky-add-to-cart {
     display: none; }
-  
+    
+  @media (max-width:767px){
+    table.cart .product-thumbnail img {
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+  }
+  .u-columns.woocommerce-Addresses.col2-set.addresses {
+    display: block;
+    .woocommerce-Address {
+      width: 100% !important;
+      flex: 100%;
+      max-width: 100%;
+      margin: 0;
+      margin-right: 0 !important;
+  }
+  section.woocommerce-customer-details .col-1, section.woocommerce-customer-details .col-2 {
+    max-width: 100% !important;
+    
+}
+}
+  }
   @media (min-width: 768px) {
+    section.woocommerce-customer-details .col-1, section.woocommerce-customer-details .col-2 {
+      max-width: 50% !important;
+  }
+    body.search.search-results h1.page-title {
+      font-size: 28px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 30px;
+  }
     .demo_store {
       bottom: 0; }
       .demo_store a.woocommerce-store-notice__dismiss-link {
@@ -2275,10 +2314,23 @@
         margin: 0;
         vertical-align: bottom; }
     .admin-bar .storefront-sticky-add-to-cart--slideInDown {
-      top: 32px; } }
+      top: 32px; } 
+      .u-columns.woocommerce-Addresses.col2-set.addresses {
+        display: flex;
+        .woocommerce-Address {
+          width: 40% !important;
+          flex: 40%;
+          max-width: 50%;
+          margin: 0;
+          margin-right: 0 !important;
+      }
+    }
+    
+    }
   
   @media (min-width: 768px) and (max-width: 900px) {
     body:not(.page-template-template-fullwidth-php) table.cart td,
     body:not(.page-template-template-fullwidth-php) table.cart th {
       padding: 1em; } }
   
+    

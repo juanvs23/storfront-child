@@ -1,1 +1,8 @@
 node_modules
+*.DS_Store
+*.sql.gz
+*.sql
+*.bk
+*.mysql
+*.mysql.gz
+*.zip

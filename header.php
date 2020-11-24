@@ -36,11 +36,11 @@
 						<div class=" col-12 col-md-6 header-top-sections user-config">
 							<?php
 								if(is_user_logged_in()){
-									echo '<a class="" href="'. network_site_url( '/' ).'mi-cuenta/customer-logout/"> <i class="fa fa-sign-out-alt"></i> <span>Sair</span></a>';
-									echo '<a class="'. network_site_url( '/' ).'mi-cuenta/" href="#"> <i class="fa fa-home"></i>  <span>Minha Conta</span></a>';
+									echo '<a class="" href="'. network_site_url( '/' ).'my-account/customer-logout/"> <i class="fa fa-sign-out-alt"></i> <span>Sair</span></a>';
+									echo '<a class="" href="'. network_site_url( '/' ).'my-account/"> <i class="fa fa-home"></i>  <span>Minha Conta</span></a>';
 								}else{
 									echo '<a title="Cadastre-se"  class="" href="'. network_site_url( '/' ).'mi-cuenta/?=registrar=si"> <i class="fa fa-user-plus"></i> <span>Cadastre-se</span></a>';
-									echo ' <a class="" href="'. network_site_url( '/' ).'mi-cuenta/?=registrar=no"> <i class="fa fa-user"></i> <span>Entrar</span></a>';
+									echo ' <a class="" href="'. network_site_url( '/' ).'my-account/?=registrar=no"> <i class="fa fa-user"></i> <span>Entrar</span></a>';
 								}
 							?>
 						</div>
@@ -80,6 +80,8 @@
 							<label for="s" class="form-label">
 							
 								<input type="text" class="search-field form-control" placeholder="<?php echo esc_attr_x( 'Buscar...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+								<input type="hidden" value="produto" name="post_type" id="post_type" />
+
 							</label>
 
 							<button type="submit" class="search-btn"><i class="fa fa-search"></i> </button>
@@ -156,10 +158,10 @@
 						wp_nav_menu(
 							array(
 								'container_id'=>'primary-menu',
-								'theme_location' => 'menu-1',
+								'theme_location' => 'mobile-menu',
 								'menu_id'        => 'menu-container',
 							)
-						);
+						); 
 						?>
 <div id="social-mobil">
 	<p>Social media</p>

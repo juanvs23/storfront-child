@@ -91,6 +91,23 @@ const   collapseAll=(triggers)=>{
 
 
 document.addEventListener('DOMContentLoaded',()=>{
+    const modelWrapper= document.querySelector('.modal-wrapper');
+    const closerModal=document.querySelector('.modal-closer');
+  
+    if(!!modelWrapper){
+        setTimeout(()=>{
+            modelWrapper.style.opacity="1"
+        },1500)
+        closerModal.addEventListener('click',()=>{
+            modelWrapper.remove()
+        })
+        setTimeout(()=>{
+           if (modelWrapper) {
+            modelWrapper.remove()
+           }
+        },6000)
+    }
+
     //slider
     if(bannerSlider){
         new splide( bannerSlider,{
@@ -115,7 +132,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     } ).mount();
    }
    if (heMuitoSimple) {
-       console.log('object')
+ 
        new splide('#he-muito-simple',{
         type   : 'loop',
         destroy:true,
@@ -176,18 +193,17 @@ closeSearch.addEventListener('click',()=>{
 
      openMenu.addEventListener('click',()=>{
          document.getElementById("mySidenav").style.width = "250px";
-         document.querySelector("#mySidenav #primary-menu ul").style.opacity = "1";
+         document.querySelector("#mySidenav  ul").style.opacity = "1";
 
      })
      cerradorBtn.addEventListener('click',()=>{
          document.getElementById("mySidenav").style.width = "0";
-         document.querySelector("#mySidenav #primary-menu ul").style.opacity = "0";
+         document.querySelector("#mySidenav  ul").style.opacity = "0";
 
      })
     
  if(woocommerceCheckout){
-     console.log('hola desde checkout')
-     //tabs
+   
 tabsPayment();
  }     
 

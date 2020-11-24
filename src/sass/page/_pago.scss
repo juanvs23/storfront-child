@@ -29,12 +29,7 @@ button#place_order {
         font-family: $popinsM;
     }
 }
-ul.wc_payment_methods.payment_methods.methods label {
-    display: none !important;
-}
-//tabs
-.rating-wrap,
-.star-rating{
+#payment .payment_methods>.wc_payment_method>label, #payment .payment_methods>.woocommerce-PaymentMethod>label {
     display: none !important;
 }
 .content-itau {
@@ -85,12 +80,7 @@ ul.lista-tab li:hover, ul.lista-tab li.is-active {
 	color:white;
     
 }
-ul.wc_payment_methods.payment_methods.methods li label:first-of-type {
-    display: none !important;
-}
-ul.wc_payment_methods.payment_methods.methods li input[type="radio"]:first-of-type {
-    display: none !important;
-}
+
 @media(max-width:767px){
   ul.lista-tab li {
     list-style-type: none;

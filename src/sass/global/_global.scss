@@ -5,6 +5,14 @@ body,html{
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+a{
+    text-decoration: none !important;
+    &:visited,
+    &:focus,
+    &:hover{
+        text-decoration: none !important;
+    }
+}
 :root{
     --base-black:#000;
     --base-blue-1:#0095d2;
@@ -34,9 +42,21 @@ body,html{
         outline: none;
     }
 }
-a:focus {
-    outline: none;
+a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus{
+    outline: 0px solid transparent;
 }
+a {
+    color:var( --base-blue-4);
+
+}
+h1.product_title {
+    font-size: 45px;
+    font-family: $popinsB;
+}
+a:focus {
+    outline: none !important;
+}
+
 @media (min-width:1400px){
     .container{
         max-width: 1250px;

@@ -35,7 +35,8 @@ get_header(); ?>
 
 			
 			?>
-<?php carruselSection('music','Kits para o seu bebê');?>
+<?php carruselSection('Care Friday','Care Friday');?>
+			
 
 
 <section class="call-to-action">
@@ -47,7 +48,7 @@ get_header(); ?>
 
 		</div>
 		<div class="call-to-action-button">
-	<button class="btn-default btn-color-primary" onclick="location.href = '//ebabyhome.com.br/product-category/kits/';">Escolha seu kit agora</button>	
+	<button class="btn-default btn-color-primary" onclick="location.href = '//ebabyhome.com.br/kits/';">Escolha seu kit agora</button>	
 </div>
 	
 </section>
@@ -62,7 +63,7 @@ get_header(); ?>
 				<div class="container">
 				<div class="row  content-mobil">
 					<div class="col-md-4">
-					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/1-1-200x200-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/1-1-200x200-1.png">
+					<img src="https://ebabyhome.com.br/wp-content/uploads/2020/11/image1.svg" alt="" srcset="https://ebabyhome.com.br/wp-content/uploads/2020/11/image1.svg">
 					</div>
 					<div class="col-md-8 pasos">
 						<span> 1. </span>
@@ -83,7 +84,7 @@ get_header(); ?>
 					 </p>
 					</div>
 					<div class="col-md-4">
-					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/paso2.2-200x200-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2020/06/paso2.2-200x200-1.png">
+					<img src="https://ebabyhome.com.br/wp-content/uploads/2020/11/paso2.2-200x200-1.svg" alt="" srcset="https://ebabyhome.com.br/wp-content/uploads/2020/11/paso2.2-200x200-1.svg">
 					</div>
 				</div>
 				</div>
@@ -92,7 +93,7 @@ get_header(); ?>
 				<div class="container">
 				<div class="row content-mobil">
 					<div class="col-md-4">
-					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/03/3-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/03/3-1.png">
+					<img src="https://ebabyhome.com.br/wp-content/uploads/2020/11/3-1.svg" alt="" srcset="https://ebabyhome.com.br/wp-content/uploads/2020/11/3-1.svg">
 					</div>
 					<div class="col-md-8 pasos">
 						<span> 3. </span>
@@ -114,7 +115,7 @@ get_header(); ?>
 					 </p>
 					</div>
 					<div class="col-md-4">
-					<img src="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/10/box-ebaby-2-1.png" alt="" srcset="https://x9p5i2p7.rocketcdn.me/wp-content/uploads/2019/10/box-ebaby-2-1.png">
+					<img src="https://ebabyhome.com.br/wp-content/uploads/2020/11/box-ebaby-2-1.svg" alt="" srcset="https://ebabyhome.com.br/wp-content/uploads/2020/11/box-ebaby-2-1.svg">
 					</div>
 				</div>
 				</div>
@@ -152,11 +153,15 @@ echo $content;
 */
 ?>
 </section>-->
-<div id="app">
 
-</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
 <?php
+
+
 get_footer();
+if (is_front_page(  )) {
+	modalPromo('https://www.carefree.com.ar/sites/carefree_ar/files/protectores-diarios-carefree-todos-los-dias.png',' '," ",'https://ebabyhome.com.br/#kit-home');
+}

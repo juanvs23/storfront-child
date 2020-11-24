@@ -1,4 +1,5 @@
 <?php
+//registrar widgets
 function info_icon_widgets() {
 	register_widget( 'ShowInfoWidgets' );
 	register_widget( 'FormSuscribeWidget' );
@@ -20,10 +21,35 @@ class FormSuscribeWidget extends WP_Widget {
 		);
 	}
 
-	public function widget( $args, $instance ) {
-		$text = apply_filters( 'widget_text', empty( $instance['formCampo_demo_title'] ) ? '' : $instance['formCampo_demo_title'], $instance );
+	public function widget( $args, $instanceForm ) {
+		/**
+		 * 'formCampo_title' => '',
+    	 *'formCampo_campotexto' => '',
+		 *'formCampo_url'=>'',
+		 *'formCampo_option'
+		 */
 		
-		$conten='';
+		$title = apply_filters( 'widget_text', empty( $instanceForm['formCampo_title'] ) ? '' : $instanceForm['formCampo_title'], $instanceForm );
+		$text = apply_filters( 'widget_text', empty( $instanceForm['formCampo_campotexto'] ) ? '' : $instanceForm['formCampo_campotexto'], $instanceForm );
+		$url = apply_filters( 'widget_text', empty( $instanceForm['ormCampo_url'] ) ? '' : $instanceForm['ormCampo_url'], $instanceForm );
+	
+		//echo $args['before_widget'];
+		//echo $args['before_title'] . apply_filters( 'widget_title', $instanceForm['formCampo_title'] ). $args['after_title'];
+		//echo 'hola '.$title;
+			  if(true){
+				$conten='';
+				$conten.= '<div class="full-widget-form">';
+				$conten.= '<h3 class="title-form">Newsletter</h3>';
+				$conten.= '  <p>Obtenha todas as informações mais recentes sobre eventos, vendas e ofertas. Inscreva-se para receber boletins informativos hoje</p>'; 
+				  $conten.= '<div class="join-widget">';
+				$conten.= '<a class="suscrition-btn" href=""  >Inscreva-se</a>';
+				$conten.=  '</div>';
+				$conten.=  '</div>';
+				
+				echo $conten;
+  
+			  }else{
+				$conten='';
 		$conten.= '<div class="full-widget-form">';
 		$conten.= '<h3 class="title-form">Newsletter</h3>';
 		$conten.= '  <p>Obtenha todas as informações mais recentes sobre eventos, vendas e ofertas. Inscreva-se para receber boletins informativos hoje</p>'; 
@@ -43,30 +69,62 @@ class FormSuscribeWidget extends WP_Widget {
 		$conten.='</div>';
 		$conten.=  '</form>';
 		$conten.=  '</div>';
+		
 		echo $conten;
+  
+			  }
+
+
+
+		
 
 	}
 
-	public function form( $instance ) {
+	public function form( $instanceForm ) {
          // Valores por defecto
- $instance = wp_parse_args( (array) $instance, array( 
-    'formCampo_demo_title' => '',
+ $instanceForm = wp_parse_args( (array) $instanceForm, array( 
+    'formCampo_title' => '',
     'formCampo_campotexto' => '',
-    'formCampo_url'=>''
+	'formCampo_url'=>'',
+	'formCampo_option'=>'boton'
     ) );
-   
     // Si existen datos en la bsae de datos los recogemos para mostrarlos
-    $demowp_campotexto = !empty( $instance['demowp_campotexto'] ) ? $instance['demowp_campotexto'] : '';
+	$formCampo_title = !empty( $instanceForm['formCampo_title'] ) ? $instanceForm['formCampo_title'] : '';
+	$formCampo_campotexto = !empty( $instanceForm['formCampo_campotexto'] ) ? $instanceForm['formCampo_campotexto'] : '';
+	$formCampo_url = !empty( $instanceForm['formCampo_url'] ) ? $instanceForm['formCampo_url'] : '';
+	$formCampo_option = !empty( $instanceForm['formCampo_option'] ) ? $instanceForm['formCampo_option'] : '';
     
+	$showInfo_checked_2= $formCampo_option=='formulario' ? 'selected': '';
+	$showInfo_checked_1= $formCampo_option=='boton' ? 'selected': '';
     echo '<p>';
-    echo ' <label for="' . $this->get_field_id( 'demowp_campotexto' ) . '" class="demowp_campotexto_label">' . __( 'campo texto', 'text_domain' ) . '</label>';
-    echo ' <input type="text" id="' . $this->get_field_id( 'demowp_campotexto' ) . '" name="' . $this->get_field_name( 'demowp_campotexto' ) . '" class="widefat" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr( $demowp_campotexto ) . '">';
-    echo ' <label for="' . $this->get_field_id( 'demowp_campotexto' ) . '" class="demowp_campotexto_label">' . __( 'campo texto', 'text_domain' ) . '</label>';
-    echo ' <input type="text" id="' . $this->get_field_id( 'demowp_campotexto' ) . '" name="' . $this->get_field_name( 'demowp_campotexto' ) . '" class="widefat" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr( $demowp_campotexto ) . '">';
-    echo '</p>';
+    echo ' <label for="' . $this->get_field_id( 'formCampo_title' ) . '" class="demowp_campotexto_label"> Titulo </label>';
+    echo ' <input type="text" id="' . $this->get_field_id( 'formCampo_title' ) . '" name="' . $this->get_field_name( 'formCampo_title' ) . '" class="widefat" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr( $formCampo_title ) . '">';
+    echo ' <label for="' . $this->get_field_id( 'formCampo_campotexto' ) . '" class="demowp_campotexto_label"> Texto de boton </label>';
+    echo ' <input type="text" id="' . $this->get_field_id( 'formCampo_campotexto' ) . '" name="' . $this->get_field_name( 'formCampo_campotexto' ) . '" class="widefat" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr( $formCampo_campotexto ) . '">';
+	echo ' <label for="' . $this->get_field_id( 'formCampo_url' ) . '" class="demowp_campotexto_label"> URL destino </label>';
+    echo ' <input type="text" id="' . $this->get_field_id( 'formCampo_url' ) . '" name="' . $this->get_field_name( 'formCampo_url' ) . '" class="widefat" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr($formCampo_url ) . '">';
+    echo ' <label for="' . $this->get_field_id( 'demowp_campotexto' ) . '" class="demowp_campotexto_label"> Tecnica de envio </label>';
+   
+	echo ' <select class="select-widget" name="' . $this->get_field_name( 'showInfo_style' ) . '">';
+		echo '<option value="formulario"  selected="'. $showInfo_checked_1 .'">  Formulario </option>';
+		echo ' <option value="boton" selected="'. $showInfo_checked_2 .'" > Boton </option> ';
+		echo ' </select> ';
+	echo '</p>';
 	}
 
-	public function update( $new_instance, $old_instance ) {
+	public function update( $new_instanceForm, $old_instanceForm ) {
+		$instanceForm = array();
+		$instanceForm = $old_instanceForm;
+		/**
+		 * 'formCampo_title' => '',
+    *'formCampo_campotexto' => '',
+	*'formCampo_url'=>'',
+	*'formCampo_option'
+		 */
+		$instanceForm['formCampo_title'] = strip_tags( $new_instanceForm['formCampo_title'] );
+        $instanceForm['formCampo_campotexto'] = strip_tags( $new_instanceForm['formCampo_campotexto'] );
+		$instanceForm['formCampo_url'] = strip_tags( $new_instanceForm['formCampo_url'] );
+        $instanceForm['formCampo_option'] = strip_tags( $new_instanceForm['formCampo_option'] );
 
 	}
 
@@ -107,6 +165,7 @@ class ShowInfoWidgets extends WP_Widget{
 
 			}else{
 				?>
+				<div class="widget-content">
 				<div class="style-2-container">
 					<div class="icon-content">
 						<i class="fa <?php echo $instance1['showInfo_icon'] ; ?>"></i>
@@ -114,7 +173,7 @@ class ShowInfoWidgets extends WP_Widget{
 					<div class="text-content">
 					<?php echo $instance1['showInfo_text'] ; ?>
 					</div>
-				
+			</div>
 				</div>
 				</div>
 				
@@ -182,4 +241,3 @@ class ShowInfoWidgets extends WP_Widget{
 	}
 
 }
-
